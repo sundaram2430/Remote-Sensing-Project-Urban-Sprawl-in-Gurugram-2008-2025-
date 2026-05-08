@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Urban Sprawl – Gurugram | Remote Sensing Study</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* Typewriter */
+.typewriter{overflow:hidden;white-space:nowrap;border-right:3px solid var(--neon-green);animation:type 3.5s steps(60,end) forwards,blink .7s step-end infinite}
+@keyframes type{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+.hero h1{display:inline-block;max-width:100%}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div id="progress-bar"></div>
+
+<nav>
+  <span class="nav-brand">⬡ RS // GURUGRAM</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cta.html">CTA</a></li>
+    <li><a href="ndvi.html">NDVI</a></li>
+    <li><a href="ndbi.html">NDBI</a></li>
+    <li><a href="mndwi.html">MNDWI</a></li>
+    <li><a href="conversion.html">Conversion</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="hero reveal">
+    <div class="hero-tag">⬡ Remote Sensing Project · BSc Environmental Science</div>
+    <h1 class="typewriter">Urban Sprawl &amp; Environmental Transformation in Gurugram, India</h1>
+    <p class="subtitle">A Multi-Temporal Remote Sensing Change Detection Study (2008 – 2016 – 2025)</p>
+    <p class="author">Sundaram Kumar &nbsp;·&nbsp; Enrollment: BSES1230031</p>
+    <div class="stats-row" style="justify-content:center;margin-top:2rem">
+      <div class="stat-box"><div class="val">17 yrs</div><div class="label">Study Period</div></div>
+      <div class="stat-box"><div class="val">1,258 km²</div><div class="label">Study Area</div></div>
+      <div class="stat-box"><div class="val">κ = 0.89</div><div class="label">Kappa Score</div></div>
+      <div class="stat-box"><div class="val">24,000 ha</div><div class="label">Land Converted</div></div>
+      <div class="stat-box"><div class="val">+180%</div><div class="label">Built-up Growth</div></div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="reveal">
+    <div class="card-glow">
+      <div class="card">
+        <h2 class="section-title"><span class="icon">🛰</span>Introduction</h2>
+        <p>India is among the fastest urbanising nations on Earth. In the span of two decades, millions of hectares of agricultural land, forest, and wetland have been consumed by expanding city boundaries. Nowhere is this transformation more dramatic than in Gurugram (formerly Gurgaon), Haryana — a district that shifted from a quiet, agriculture-dominated landscape in the late 1990s to one of India's premier corporate and technology hubs by the 2020s.</p>
+        <p>Driven by liberalisation policies, proximity to New Delhi's Indira Gandhi International Airport, and aggressive real-estate development, Gurugram witnessed unprecedented infrastructure investment between 2000 and 2025. Multinational corporations, glitzy shopping malls, and kilometres of flyovers now stand where paddy fields and mango orchards once flourished. This explosive growth has come at a steep environmental cost.</p>
+        <p>The Aravalli hill range — one of the world's oldest fold mountains — forms Gurugram's western boundary and provides vital ecosystem services including groundwater recharge, biodiversity habitat, and a natural air-quality barrier against dust storms from the Thar Desert. Urbanisation pressure has led to encroachment, illegal quarrying, and vegetation clearance along these ecologically sensitive slopes. Simultaneously, historic water bodies such as Damdama Lake and the numerous seasonal ponds (johads) that dotted the landscape have shrunk dramatically or disappeared entirely, exacerbating Gurugram's chronic groundwater depletion crisis.</p>
+        <p>Remote sensing offers a powerful, cost-effective, and spatially explicit methodology to monitor these changes objectively over time. This study uses multi-temporal Landsat imagery — Landsat 7 ETM+ (2008), Landsat 8 OLI (2016), and Landsat 9 OLI-2 (2025) — acquired during the dry season (October–December) to minimise atmospheric and phenological variability. Dry-season acquisition is particularly important in South Asian contexts, as monsoon cloud cover renders wet-season imagery largely unusable.</p>
+        <p>Three spectral indices were calculated using the Image Calculator module within TerrSet (Clark Labs): the Normalised Difference Vegetation Index (NDVI) to track vegetation vitality; the Normalised Difference Built-up Index (NDBI) to quantify impervious surface expansion; and the Modified Normalised Difference Water Index (MNDWI) to delineate surface water bodies and detect their loss. Supervised classification using Maximum Likelihood Classifier (MLC) in TerrSet was applied to produce Land Use / Land Cover (LULC) maps for each epoch, achieving a Kappa coefficient of 0.89 — indicating almost-perfect agreement between the classified map and ground-truth reference data. Together, these methods provide a rigorous, multi-dimensional picture of Gurugram's environmental transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">🎯</span>Objectives</h2>
+      <ul class="styled">
+        <li><strong style="color:var(--neon-green)">Objective 1:</strong> Quantify and map Land Use / Land Cover (LULC) changes in Gurugram district for the years 2008, 2016, and 2025 using supervised classification in TerrSet, and generate transition matrices to identify the primary sources of urban expansion.</li>
+        <li><strong style="color:var(--neon-blue)">Objective 2:</strong> Calculate and analyse temporal trends of NDVI, NDBI, and MNDWI over the 17-year study period to characterise biophysical changes associated with urban sprawl, and map spatial patterns of change across the district.</li>
+        <li><strong style="color:var(--neon-pink)">Objective 3:</strong> Assess the environmental implications of urbanisation by quantifying vegetation loss (including Aravalli forest degradation), surface water body shrinkage, and the inverse relationship between built-up intensification and green/blue infrastructure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STUDY AREA -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">🗺</span>Study Area</h2>
+      <div class="grid-2">
+        <div>
+          <p>Gurugram district is located in the southern part of Haryana state, directly adjacent to the southwestern boundary of Delhi. The district spans approximately <strong style="color:var(--neon-green)">1,258 km²</strong> and lies between latitudes <strong>28°15'N – 28°32'N</strong> and longitudes <strong>76°45'E – 77°15'E</strong>.</p>
+          <p>Geographically, the district is bounded to the west and southwest by the ancient <strong>Aravalli hill range</strong>, which acts as a biodiversity corridor and a critical groundwater recharge zone. The northeastern boundary abuts the National Capital Territory of Delhi, making Gurugram a prime recipient of Delhi's outward urban expansion. The flat to gently undulating terrain in the central and eastern parts of the district — originally under intensive agriculture — proved highly attractive for real-estate development.</p>
+          <p>The district contains several significant water bodies including Damdama Lake (the largest), Sultanpur National Park's seasonal wetlands, and numerous traditional rainwater harvesting ponds. The presence of NH-48 (old NH-8) and the Dwarka Expressway (NH-248BB) as major infrastructure axes has been a key driver of linear urban expansion within the study area.</p>
+        </div>
+        <div class="img-card" style="cursor:pointer">
+          <span class="hint">🔍 Click to Enlarge</span>
+          <img src="Location Map of Study Area.png" alt="Location Map of Study Area" loading="lazy">
+          <figcaption>Figure 1: Location map of Gurugram within the National Capital Region, Haryana, India. Gurugram district (orange) is highlighted within Haryana state (yellow-green) against the national boundary of India.</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">⚙</span>Methodology</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Data Acquisition</h4><p>Landsat 7 ETM+ (2008), Landsat 8 OLI (2016), Landsat 9 OLI-2 (2025) — October to December dry-season imagery from USGS EarthExplorer. Surface Reflectance products used.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Pre-processing in TerrSet</h4><p>Band import, layer stacking, subset extraction to Gurugram district boundary. Radiometric and atmospheric correction verified.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Spectral Index Calculation</h4><p>NDVI = (NIR–Red)/(NIR+Red) · NDBI = (SWIR1–NIR)/(SWIR1+NIR) · MNDWI = (Green–SWIR1)/(Green+SWIR1) — computed via Image Calculator.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Supervised Classification</h4><p>5 classes: Built-up, Dense Vegetation, Sparse Vegetation, Water Bodies, Barren Land. Maximum Likelihood Classifier (MLC) in TerrSet with carefully selected training samples.</p></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-body"><h4>Change Detection &amp; Matrix</h4><p>Post-classification comparison; transition matrix generated to quantify inter-class conversions in hectares across all three epochs.</p></div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-body"><h4>Accuracy Assessment</h4><p>Error matrix using stratified random sample of validation points. Overall accuracy 86.2%, Kappa 0.89 (Almost Perfect Agreement per Landis &amp; Koch 1977).</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCURACY -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">✅</span>Accuracy Assessment</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start">
+        <div style="flex:1;min-width:240px">
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
+            <div class="kappa-badge">κ = 0.89 &nbsp;· Almost Perfect</div>
+            <div class="kappa-badge" style="border-color:var(--neon-blue);color:var(--neon-blue);text-shadow:0 0 8px var(--neon-blue)">OA = 86.2%</div>
+          </div>
+          <p>A Kappa coefficient of <strong style="color:var(--neon-green)">0.89</strong> falls in the "Almost Perfect Agreement" category (κ > 0.80), confirming that the supervised classification in TerrSet produced highly reliable LULC maps suitable for quantitative change detection analysis. The Overall Accuracy of 86.2% means 86 out of every 100 randomly sampled pixels were classified correctly.</p>
+          <p>The primary source of misclassification (addressed during class refinement) was confusion between Built-up and Barren Land due to their spectrally similar SWIR-NIR responses — a common challenge in semi-arid urban environments.</p>
+        </div>
+        <div style="flex:1;min-width:240px">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Class</th><th>Producer Acc.</th><th>User Acc.</th></tr></thead>
+              <tbody>
+                <tr><td>Built-up</td><td class="gain">87.3%</td><td class="gain">85.1%</td></tr>
+                <tr><td>Dense Vegetation</td><td class="gain">91.2%</td><td class="gain">89.6%</td></tr>
+                <tr><td>Sparse Vegetation</td><td>83.5%</td><td>81.9%</td></tr>
+                <tr><td>Water Bodies</td><td class="gain">94.8%</td><td class="gain">93.2%</td></tr>
+                <tr><td>Barren Land</td><td>79.4%</td><td>82.7%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">📊</span>Conclusion</h2>
+      <ul class="styled">
+        <li>Urban expansion in Gurugram was successfully detected, mapped, and quantified across three epochs using a reproducible remote sensing workflow in TerrSet.</li>
+        <li><strong style="color:var(--neon-pink)">Built-up area increased by 180%</strong> — from approximately 15,000 ha (2008) to 42,000 ha (2025) — confirming one of the fastest urbanisation rates in South Asia.</li>
+        <li>Agricultural land suffered the greatest absolute loss, declining by ~27,000 ha, and was the <strong>primary source class</strong> converted to urban/built-up use throughout the study period.</li>
+        <li>Forest and scrub vegetation in the Aravalli foothills lost an estimated <strong style="color:var(--loss)">3,500 ha</strong> — placing critical biodiversity habitat and groundwater recharge zones under direct urbanisation pressure.</li>
+        <li>Surface water bodies shrank by <strong style="color:var(--loss)">52%</strong> — from approximately 2,500 ha (2008) to 1,200 ha (2025) — with many seasonal ponds completely disappearing between 2016 and 2025.</li>
+        <li>A strong inverse relationship was confirmed: as <span style="color:var(--neon-orange)">NDBI increased</span> from 0.05→0.15→0.25, both <span style="color:var(--neon-green)">NDVI decreased</span> (0.45→0.35→0.25) and <span style="color:var(--neon-blue)">MNDWI decreased</span> (0.12→0.08→0.03), validating the multi-index change detection approach.</li>
+        <li>The Kappa coefficient of 0.89 validates the reliability of all three classified LULC maps, ensuring that observed changes reflect genuine land cover transitions rather than classification artefacts.</li>
+        <li>This study demonstrates that satellite remote sensing is an indispensable, objective, and scalable tool for quantifying the environmental costs of rapid urbanisation, with direct relevance to urban planning, environmental impact assessment, and SDG monitoring.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT I LEARNED -->
+  <section class="reveal">
+    <div class="grid-2">
+      <div class="card">
+        <h2 class="section-title" style="font-size:1rem"><span class="icon">🧠</span>What I Learned</h2>
+        <ul class="styled">
+          <li>Calculated NDVI, NDBI, and MNDWI from raw Landsat bands using the Image Calculator in TerrSet to monitor vegetation health, built-up density, and water body extent across multiple time periods.</li>
+          <li>Performed supervised classification in TerrSet using Maximum Likelihood Classifier, achieving a Kappa coefficient of 0.89 and understanding the role of training sample quality in classification accuracy.</li>
+          <li>Identified that agricultural land was the primary source class (~24,000 ha) converted to built-up area over the 2008–2025 period, more than forests or water bodies.</li>
+          <li>Observed and quantified the inverse spectral relationship between urbanisation indices (NDBI rising) and environmental health indices (NDVI and MNDWI both declining) — a key insight for environmental monitoring.</li>
+          <li>Generated and interpreted land cover transition matrices to precisely quantify how many hectares of each class converted to each other class between epochs.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="section-title" style="font-size:1rem"><span class="icon">⚡</span>Main Challenge</h2>
+        <p><strong style="color:var(--neon-orange)">Spectral Confusion: Built-up vs. Bare Soil</strong></p>
+        <p>The most significant technical challenge was the spectral similarity between Built-up surfaces (concrete, asphalt, rooftops) and Bare/Barren Soil in the SWIR and NIR bands. Both classes exhibit high SWIR reflectance and low NIR reflectance, causing the classifier to confuse freshly cleared construction sites with established urban areas.</p>
+        <p>This was partly mitigated by: incorporating MNDWI (which suppresses soil signal better than NDWI); collecting more diverse training samples specifically for the peri-urban transition zone; and using post-classification visual inspection against high-resolution reference imagery to identify and correct systematic misclassifications.</p>
+        <h2 class="section-title" style="font-size:1rem;margin-top:1.5rem"><span class="icon">🔧</span>Could Be Done Better</h2>
+        <ul class="styled">
+          <li>Use significantly more training samples, especially for the Built-up and Bare Soil classes, with stratified spatial distribution.</li>
+          <li>Add spatial driver variables (road distance, elevation, slope) to a Land Change Modeller (LCM) to predict future urban expansion patterns.</li>
+          <li>Apply stratified random sampling for accuracy assessment instead of simple random sampling to ensure all classes are adequately represented.</li>
+          <li>Include an intermediate time step (e.g., 2010 or 2012) to better capture the acceleration of urbanisation during the post-global-financial-crisis boom period.</li>
+          <li>Create animated GIF or video time-lapse of LULC change maps rather than static comparisons, for more intuitive public communication of findings.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="reveal">
+    <div class="card">
+      <h2 class="section-title"><span class="icon">📚</span>References</h2>
+      <ol class="ref-list">
+        <li><span class="ref-num">[1]</span>United Nations (2019). <em>World Urbanization Prospects: The 2018 Revision.</em> Department of Economic and Social Affairs, Population Division. ST/ESA/SER.A/420.</li>
+        <li><span class="ref-num">[2]</span>USGS EarthExplorer (2026). <em>Landsat Collection 2 Surface Reflectance Products.</em> United States Geological Survey. Available at: earthexplorer.usgs.gov</li>
+        <li><span class="ref-num">[3]</span>McFeeters, S.K. (1996). The use of the Normalised Difference Water Index (NDWI) in the delineation of open water features. <em>International Journal of Remote Sensing,</em> 17(7), 1425–1432.</li>
+        <li><span class="ref-num">[4]</span>Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. <em>International Journal of Remote Sensing,</em> 27(14), 3025–3033.</li>
+        <li><span class="ref-num">[5]</span>Zha, Y., Gao, J., &amp; Ni, S. (2003). Use of normalised difference built-up index in automatically mapping urban areas from TM imagery. <em>International Journal of Remote Sensing,</em> 24(3), 583–594.</li>
+        <li><span class="ref-num">[6]</span>Rouse, J.W., Haas, R.H., Schell, J.A., &amp; Deering, D.W. (1974). Monitoring vegetation systems in the Great Plains with ERTS. <em>NASA SP-351, Third ERTS Symposium,</em> 1, 309–317.</li>
+        <li><span class="ref-num">[7]</span>Eastman, J.R. (2016). <em>TerrSet: Geospatial Monitoring and Modelling System.</em> Clark Labs, Clark University, Worcester, MA.</li>
+        <li><span class="ref-num">[8]</span>Mallupattu, P.K., &amp; Reddy, J.R.S. (2013). Analysis of land use/land cover changes using remote sensing data and GIS at an urban area, Tirupati, India. <em>The Scientific World Journal,</em> 2013, Article ID 268623.</li>
+        <li><span class="ref-num">[9]</span>Singh, P., &amp; Khanduri, K. (2011). Land use and land cover change detection through remote sensing &amp; GIS technology: Case study of Gurgaon. <em>International Journal of Geomatics and Geosciences,</em> 2(1), 303–310.</li>
+        <li><span class="ref-num">[10]</span>Bhuvan, ISRO (2026). <em>Thematic Services – Land Use Land Cover Data.</em> Indian Space Research Organisation. Available at: bhuvan.nrsc.gov.in</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox"><span class="close">✕</span><img src="" alt=""><div id="lb-caption"></div></div>
+
+<button id="btt" title="Back to top">↑</button>
+
+<footer>
+  <p>Urban Sprawl &amp; Environmental Transformation in Gurugram · <span>Sundaram Kumar</span> · BSES1230031</p>
+  <p style="margin-top:.4rem">Remote Sensing Change Detection Study · 2008–2016–2025 · Landsat 7/8/9 · TerrSet</p>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
